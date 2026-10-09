@@ -5,452 +5,990 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>United CAD Services | CAD Design & Drafting</title>
-
-  <meta name="description" content="United CAD Services offers CAD design and drafting solutions. Contact us at 9845825097 for enquiries.">
+  <title>United CAD Services | AutoCAD, BIM & 3D Design</title>
+  <meta name="description" content="United CAD Services offers AutoCAD drafting, BIM, interior design, Primavera project management and 3D design services. Contact us at 9845825097.">
   <meta name="robots" content="index, follow">
-  <meta name="theme-color" content="#07152f">
+  <meta name="theme-color" content="#090909">
 
-  <!-- Replace with your actual GitHub Pages website URL -->
+  <!-- Replace this with your actual GitHub Pages URL -->
   <link rel="canonical" href="https://YOUR-USERNAME.github.io/YOUR-REPOSITORY/">
 
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+  <meta property="og:title" content="United CAD Services | Premium CAD & 3D Design">
+  <meta property="og:description" content="Explore CAD drafting, BIM, interior design, project management and 3D design services.">
+  <meta property="og:type" content="website">
 
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      font-family: Arial, Helvetica, sans-serif;
-      background: #07152f;
-      color: #ffffff;
-      overflow-x: hidden;
-    }
-
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 20px;
-      padding: 22px 8%;
-      background: rgba(7, 21, 47, 0.94);
-      border-bottom: 1px solid rgba(76, 180, 255, 0.25);
-    }
-
-    .logo {
-      font-size: 23px;
-      font-weight: 800;
-      color: #45c8ff;
-    }
-
-    .logo span {
-      color: #ffad42;
-    }
-
-    nav {
-      display: flex;
-      gap: 22px;
-      flex-wrap: wrap;
-    }
-
-    nav a {
-      color: #d8e8ff;
-      font-size: 14px;
-    }
-
-    nav a:hover {
-      color: #ffad42;
-    }
-
-    .hero {
-      min-height: 620px;
-      padding: 80px 8%;
-      display: grid;
-      grid-template-columns: 1.1fr 0.9fr;
-      align-items: center;
-      gap: 45px;
-      background:
-        radial-gradient(ellipse at 80% 40%, #123e70 0%, transparent 45%),
-        linear-gradient(135deg, #07152f, #0b2348);
-    }
-
-    .tag {
-      display: inline-block;
-      padding: 9px 15px;
-      color: #5bd6ff;
-      border: 1px solid #278bc8;
-      border-radius: 30px;
-      font-size: 12px;
-      letter-spacing: 2px;
-      margin-bottom: 22px;
-    }
-
-    h1 {
-      font-size: clamp(38px, 5vw, 65px);
-      line-height: 1.12;
-      margin-bottom: 22px;
-    }
-
-    h1 span {
-      color: #ffad42;
-      text-shadow: 0 0 25px rgba(255, 173, 66, 0.2);
-    }
-
-    .intro {
-      color: #bfd1ed;
-      font-size: 17px;
-      line-height: 1.8;
-      max-width: 560px;
-      margin-bottom: 30px;
-    }
-
-    .button {
-      display: inline-block;
-      padding: 15px 23px;
-      border-radius: 9px;
-      background: linear-gradient(135deg, #36c5ff, #147be8);
-      color: #06142b;
-      font-weight: 800;
-      box-shadow: 0 10px 30px rgba(35, 160, 255, 0.25);
-      transition: transform 0.3s, box-shadow 0.3s;
-    }
-
-    .button:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 15px 35px rgba(35, 160, 255, 0.4);
-    }
-
-    .button.secondary {
-      background: transparent;
-      color: #ffffff;
-      border: 1px solid #4386c4;
-      box-shadow: none;
-      margin-left: 10px;
-    }
-
-    /* CSS 3D rotating CAD-inspired cube */
-    .visual {
-      min-height: 360px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      perspective: 900px;
-    }
-
-    .cube-scene {
-      width: 210px;
-      height: 210px;
-      perspective: 800px;
-    }
-
-    .cube {
-      width: 100%;
-      height: 100%;
-      position: relative;
-      transform-style: preserve-3d;
-      animation: rotateCube 14s linear infinite;
-    }
-
-    .face {
-      position: absolute;
-      inset: 0;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border: 2px solid #50d7ff;
-      background: rgba(22, 107, 178, 0.19);
-      box-shadow: inset 0 0 35px rgba(48, 190, 255, 0.13),
-                  0 0 20px rgba(48, 190, 255, 0.12);
-      color: #8ce6ff;
-      font-size: 32px;
-      font-weight: bold;
-      letter-spacing: 3px;
-      backface-visibility: visible;
-    }
-
-    .front  { transform: translateZ(105px); }
-    .back   { transform: rotateY(180deg) translateZ(105px); }
-    .right  { transform: rotateY(90deg) translateZ(105px); }
-    .left   { transform: rotateY(-90deg) translateZ(105px); }
-    .top    { transform: rotateX(90deg) translateZ(105px); }
-    .bottom { transform: rotateX(-90deg) translateZ(105px); }
-
-    @keyframes rotateCube {
-      from { transform: rotateX(-20deg) rotateY(0deg); }
-      to   { transform: rotateX(340deg) rotateY(360deg); }
-    }
-
-    .section {
-      padding: 85px 8%;
-    }
-
-    .section-title {
-      text-align: center;
-      margin-bottom: 45px;
-    }
-
-    .section-title h2 {
-      font-size: clamp(29px, 4vw, 42px);
-      margin-bottom: 14px;
-    }
-
-    .section-title h2 span {
-      color: #43c8ff;
-    }
-
-    .section-title p {
-      color: #aebfda;
-      line-height: 1.7;
-    }
-
-    .services {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 24px;
-    }
-
-    .service-card {
-      padding: 30px 25px;
-      border-radius: 17px;
-      background: linear-gradient(145deg, #102b50, #091a35);
-      border: 1px solid rgba(80, 177, 255, 0.25);
-      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.18);
-      transition: transform 0.35s, border-color 0.35s;
-    }
-
-    .service-card:hover {
-      transform: translateY(-9px) rotateX(2deg);
-      border-color: #45c8ff;
-    }
-
-    .service-icon {
-      font-size: 37px;
-      margin-bottom: 20px;
-    }
-
-    .service-card h3 {
-      color: #ffb653;
-      margin-bottom: 13px;
-      font-size: 20px;
-    }
-
-    .service-card p {
-      color: #b9cce6;
-      line-height: 1.8;
-      font-size: 14px;
-    }
-
-    .about {
-      background: linear-gradient(135deg, #0b2040, #0c2a4e);
-      text-align: center;
-    }
-
-    .about p {
-      max-width: 780px;
-      margin: auto;
-      color: #c3d5ed;
-      line-height: 1.9;
-    }
-
-    .contact {
-      text-align: center;
-      background:
-        radial-gradient(ellipse at center, #123966, transparent 70%);
-    }
-
-    .contact h2 {
-      font-size: clamp(30px, 4vw, 43px);
-      margin-bottom: 18px;
-    }
-
-    .contact p {
-      color: #c2d4ec;
-      margin-bottom: 28px;
-      line-height: 1.8;
-    }
-
-    .phone {
-      color: #ffb653;
-      font-size: 25px;
-      font-weight: bold;
-      margin: 25px 0;
-      display: block;
-    }
-
-    footer {
-      text-align: center;
-      padding: 25px 15px;
-      border-top: 1px solid #1d4166;
-      color: #aebfda;
-      font-size: 13px;
-      line-height: 1.8;
-    }
-
-    @media (max-width: 800px) {
-      header {
-        flex-direction: column;
-      }
-
-      nav {
-        justify-content: center;
-        gap: 15px;
-      }
-
-      .hero {
-        grid-template-columns: 1fr;
-        text-align: center;
-        padding-top: 65px;
-      }
-
-      .intro {
-        margin-left: auto;
-        margin-right: auto;
-      }
-
-      .visual {
-        min-height: 300px;
-      }
-
-      .cube-scene {
-        transform: scale(0.8);
-      }
-
-      .services {
-        grid-template-columns: 1fr;
-      }
-
-      .button.secondary {
-        margin: 12px 0 0;
-      }
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      *, *::before, *::after {
-        animation-duration: 0.01ms !important;
-        animation-iteration-count: 1 !important;
-        scroll-behavior: auto !important;
-        transition-duration: 0.01ms !important;
-      }
-    }
-  </style>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Orbitron:wght@500;600;700;800&display=swap" rel="stylesheet">
 
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "ProfessionalService",
     "name": "United CAD Services",
-    "telephone": "+91-9845825097",
-    "description": "CAD design and drafting services."
+    "telephone": "+919845825097",
+    "description": "CAD drafting, BIM, interior design, Primavera project management and 3D design services."
   }
   </script>
+
+  <style>
+    :root {
+      --bg: #090909;
+      --panel: #11110f;
+      --gold: #f3c969;
+      --gold-light: #ffe7a1;
+      --gold-dark: #9e6b18;
+      --text: #f7f3e9;
+      --muted: #b8b2a5;
+      --line: rgba(243, 201, 105, .23);
+      --max: 1180px;
+    }
+
+    * { box-sizing: border-box; }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 90px;
+    }
+
+    body {
+      margin: 0;
+      background:
+        radial-gradient(ellipse at 80% 5%, rgba(184, 128, 35, .13), transparent 32%),
+        radial-gradient(ellipse at 10% 40%, rgba(243, 201, 105, .06), transparent 28%),
+        var(--bg);
+      color: var(--text);
+      font-family: "DM Sans", sans-serif;
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      z-index: -1;
+      pointer-events: none;
+      background-image:
+        linear-gradient(rgba(243, 201, 105, .035) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(243, 201, 105, .035) 1px, transparent 1px);
+      background-size: 48px 48px;
+      mask-image: linear-gradient(to bottom, black, transparent 85%);
+    }
+
+    a { color: inherit; text-decoration: none; }
+    button, a { -webkit-tap-highlight-color: transparent; }
+    .container { width: min(var(--max), calc(100% - 40px)); margin: auto; }
+    .gold { color: var(--gold); }
+    .eyebrow {
+      color: var(--gold);
+      font-size: .76rem;
+      font-weight: 700;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+    }
+
+    /* Header */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(9, 9, 9, .83);
+      border-bottom: 1px solid var(--line);
+      backdrop-filter: blur(18px);
+    }
+
+    .nav {
+      min-height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand {
+      font-family: "Orbitron", sans-serif;
+      font-size: 1.05rem;
+      font-weight: 800;
+      letter-spacing: .04em;
+    }
+
+    .brand span { color: var(--gold); }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      color: var(--muted);
+      font-size: .9rem;
+    }
+
+    .nav-links a:hover { color: var(--gold); }
+
+    .nav-cta, .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 13px 19px;
+      border: 1px solid var(--gold);
+      border-radius: 5px;
+      background: linear-gradient(135deg, var(--gold-light), var(--gold), #c18b32);
+      color: #171108;
+      font-weight: 800;
+      box-shadow: 0 0 22px rgba(243, 201, 105, .13);
+      transition: transform .25s, box-shadow .25s;
+    }
+
+    .nav-cta:hover, .btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 0 30px rgba(243, 201, 105, .32);
+    }
+
+    .btn-outline {
+      background: rgba(255, 255, 255, .02);
+      color: var(--gold-light);
+      box-shadow: none;
+    }
+
+    /* Hero */
+    .hero {
+      min-height: 690px;
+      display: grid;
+      grid-template-columns: 1.03fr .97fr;
+      align-items: center;
+      gap: 28px;
+      padding-top: 65px;
+      padding-bottom: 75px;
+    }
+
+    .hero-copy { position: relative; z-index: 2; }
+
+    h1 {
+      max-width: 680px;
+      margin: 20px 0;
+      font-family: "Orbitron", sans-serif;
+      font-size: clamp(2.45rem, 5vw, 4.7rem);
+      line-height: 1.12;
+      letter-spacing: -.045em;
+    }
+
+    h1 span {
+      display: block;
+      color: var(--gold);
+      text-shadow: 0 0 28px rgba(243, 201, 105, .19);
+    }
+
+    .hero-copy p {
+      max-width: 570px;
+      color: var(--muted);
+      font-size: 1.06rem;
+      line-height: 1.85;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 13px;
+      margin-top: 28px;
+    }
+
+    .hero-note {
+      margin-top: 28px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px 22px;
+      color: #d6c9a9;
+      font-size: .83rem;
+    }
+
+    .hero-note span::before {
+      content: "✦";
+      color: var(--gold);
+      margin-right: 8px;
+    }
+
+    /* CSS-built 3D architectural scene */
+    .scene-wrap {
+      min-width: 0;
+      perspective: 1100px;
+      position: relative;
+    }
+
+    .scene {
+      position: relative;
+      height: 470px;
+      transform-style: preserve-3d;
+      animation: sceneFloat 6s ease-in-out infinite;
+    }
+
+    .scene-glow {
+      position: absolute;
+      width: 80%;
+      height: 60%;
+      left: 10%;
+      top: 20%;
+      border-radius: 50%;
+      background: rgba(217, 160, 54, .12);
+      filter: blur(65px);
+    }
+
+    .orbit {
+      position: absolute;
+      left: 50%;
+      top: 49%;
+      width: 340px;
+      height: 340px;
+      border: 1px solid rgba(243, 201, 105, .25);
+      border-radius: 50%;
+      transform: translate(-50%, -50%) rotateX(70deg) rotateZ(-20deg);
+      box-shadow: 0 0 28px rgba(243, 201, 105, .06);
+    }
+
+    .orbit.two {
+      width: 420px;
+      height: 420px;
+      transform: translate(-50%, -50%) rotateX(70deg) rotateZ(35deg);
+      border-style: dashed;
+      animation: orbitSpin 26s linear infinite;
+    }
+
+    .building {
+      position: absolute;
+      left: 50%;
+      top: 48%;
+      width: 225px;
+      height: 280px;
+      transform: translate(-50%, -50%) rotateY(-25deg) rotateX(7deg);
+      transform-style: preserve-3d;
+      filter: drop-shadow(0 25px 25px rgba(0, 0, 0, .55));
+      animation: buildingHover 5s ease-in-out infinite;
+    }
+
+    .tower-front {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+      border: 2px solid #e8bd60;
+      background:
+        repeating-linear-gradient(
+          to right,
+          transparent 0 29px,
+          rgba(243, 201, 105, .7) 30px,
+          transparent 32px
+        ),
+        repeating-linear-gradient(
+          to bottom,
+          rgba(255, 221, 140, .14) 0 3px,
+          transparent 4px 29px
+        ),
+        linear-gradient(120deg, #292116, #10100e 55%, #47351b);
+      box-shadow:
+        inset 0 0 25px rgba(243, 201, 105, .17),
+        0 0 22px rgba(243, 201, 105, .18);
+      transform: translateZ(43px);
+    }
+
+    .tower-side {
+      position: absolute;
+      top: 0;
+      right: -86px;
+      width: 86px;
+      height: 100%;
+      transform-origin: left;
+      transform: rotateY(90deg);
+      border: 2px solid #b68b3e;
+      background:
+        repeating-linear-gradient(to bottom, transparent 0 28px, rgba(243, 201, 105, .65) 29px 31px),
+        linear-gradient(90deg, #100e0b, #342515);
+      box-shadow: inset 0 0 25px rgba(243, 201, 105, .12);
+    }
+
+    .tower-roof {
+      position: absolute;
+      top: -43px;
+      left: 0;
+      width: 225px;
+      height: 86px;
+      transform-origin: bottom;
+      transform: rotateX(90deg);
+      border: 2px solid #f3c969;
+      background: linear-gradient(135deg, #5b411c, #17130d);
+    }
+
+    .tower-base {
+      position: absolute;
+      left: -48px;
+      bottom: -40px;
+      width: 310px;
+      height: 100px;
+      transform-origin: top;
+      transform: rotateX(75deg) translateZ(-10px);
+      border: 1px solid rgba(243, 201, 105, .65);
+      background: repeating-linear-gradient(45deg, #17130d 0 12px, #302314 13px 14px);
+      box-shadow: 0 0 32px rgba(243, 201, 105, .14);
+    }
+
+    .building-label {
+      position: absolute;
+      left: 50%;
+      bottom: 17%;
+      transform: translateX(-50%) translateZ(47px);
+      width: 150px;
+      padding: 10px 6px;
+      text-align: center;
+      color: #ffe5a0;
+      font-family: "Orbitron", sans-serif;
+      font-size: .72rem;
+      letter-spacing: .08em;
+      border: 1px solid rgba(243, 201, 105, .6);
+      background: rgba(10, 10, 8, .9);
+      box-shadow: 0 0 18px rgba(243, 201, 105, .2);
+    }
+
+    .float-tag {
+      position: absolute;
+      z-index: 3;
+      padding: 12px 15px;
+      color: var(--gold-light);
+      font-size: .8rem;
+      letter-spacing: .04em;
+      border: 1px solid rgba(243, 201, 105, .4);
+      border-radius: 6px;
+      background: rgba(15, 14, 11, .86);
+      box-shadow: 0 8px 30px rgba(0, 0, 0, .35), 0 0 20px rgba(243, 201, 105, .07);
+      backdrop-filter: blur(12px);
+      animation: tagFloat 4s ease-in-out infinite;
+    }
+
+    .tag-a { top: 14%; left: 0; }
+    .tag-b { right: 0; top: 28%; animation-delay: -1.2s; }
+    .tag-c { left: 4%; bottom: 15%; animation-delay: -2s; }
+
+    .spark {
+      position: absolute;
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: var(--gold-light);
+      box-shadow: 0 0 14px 4px rgba(243, 201, 105, .35);
+      animation: sparkle 3s ease-in-out infinite;
+    }
+
+    .s1 { top: 18%; left: 49%; }
+    .s2 { top: 65%; right: 8%; animation-delay: -1s; }
+    .s3 { bottom: 12%; left: 30%; animation-delay: -2s; }
+    .s4 { top: 35%; left: 12%; animation-delay: -.7s; }
+
+    /* Stats strip */
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      margin: 0 auto 95px;
+      border: 1px solid var(--line);
+      background: linear-gradient(110deg, rgba(243, 201, 105, .075), rgba(255, 255, 255, .015));
+    }
+
+    .stat {
+      padding: 24px;
+      text-align: center;
+    }
+
+    .stat + .stat { border-left: 1px solid var(--line); }
+
+    .stat strong {
+      display: block;
+      color: var(--gold);
+      font-family: "Orbitron", sans-serif;
+      font-size: 1.2rem;
+      margin-bottom: 7px;
+    }
+
+    .stat span { color: var(--muted); font-size: .85rem; }
+
+    /* Section styles */
+    section { padding: 50px 0 95px; }
+
+    .section-heading {
+      max-width: 700px;
+      margin: 0 auto 42px;
+      text-align: center;
+    }
+
+    .section-heading h2 {
+      margin: 13px 0;
+      font-family: "Orbitron", sans-serif;
+      font-size: clamp(1.8rem, 4vw, 3rem);
+      line-height: 1.2;
+    }
+
+    .section-heading p {
+      color: var(--muted);
+      line-height: 1.8;
+    }
+
+    /* 3D service cards */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 20px;
+      perspective: 1200px;
+    }
+
+    .service-card {
+      position: relative;
+      min-height: 235px;
+      padding: 25px 21px;
+      overflow: hidden;
+      transform-style: preserve-3d;
+      border: 1px solid rgba(243, 201, 105, .21);
+      border-radius: 12px;
+      background: linear-gradient(145deg, rgba(31, 27, 20, .96), rgba(13, 13, 12, .98));
+      box-shadow: 0 14px 35px rgba(0, 0, 0, .22);
+      transition: transform .18s ease-out, border-color .3s, box-shadow .3s;
+      will-change: transform;
+    }
+
+    .service-card::before {
+      content: "";
+      position: absolute;
+      top: -70%;
+      left: -100%;
+      width: 70%;
+      height: 250%;
+      transform: rotate(28deg);
+      background: linear-gradient(90deg, transparent, rgba(255, 230, 165, .1), transparent);
+      transition: left .7s ease;
+      pointer-events: none;
+    }
+
+    .service-card:hover::before { left: 140%; }
+
+    .service-card:hover {
+      border-color: rgba(255, 221, 140, .8);
+      box-shadow: 0 22px 50px rgba(0, 0, 0, .42), 0 0 28px rgba(243, 201, 105, .1);
+    }
+
+    .service-icon {
+      display: grid;
+      place-items: center;
+      width: 55px;
+      height: 55px;
+      margin-bottom: 23px;
+      border: 1px solid rgba(243, 201, 105, .55);
+      border-radius: 12px;
+      color: var(--gold-light);
+      background: linear-gradient(145deg, rgba(243, 201, 105, .17), rgba(243, 201, 105, .025));
+      box-shadow: inset 0 0 18px rgba(243, 201, 105, .05), 0 0 20px rgba(243, 201, 105, .06);
+      font-size: 1.55rem;
+      transform: translateZ(28px);
+    }
+
+    .service-card h3 {
+      position: relative;
+      margin: 0 0 10px;
+      font-size: 1.05rem;
+      transform: translateZ(22px);
+    }
+
+    .service-card p {
+      position: relative;
+      margin: 0;
+      color: var(--muted);
+      font-size: .88rem;
+      line-height: 1.7;
+      transform: translateZ(15px);
+    }
+
+    .service-number {
+      position: absolute;
+      top: 15px;
+      right: 17px;
+      color: rgba(243, 201, 105, .2);
+      font-family: "Orbitron", sans-serif;
+      font-size: 1.25rem;
+    }
+
+    /* About panel */
+    .about-panel {
+      display: grid;
+      grid-template-columns: .9fr 1.1fr;
+      gap: 45px;
+      align-items: center;
+      padding: clamp(25px, 5vw, 55px);
+      border: 1px solid var(--line);
+      border-radius: 15px;
+      background:
+        radial-gradient(circle at 10% 10%, rgba(243, 201, 105, .1), transparent 40%),
+        #10100e;
+      box-shadow: 0 25px 70px rgba(0, 0, 0, .2);
+    }
+
+    .blueprint {
+      min-height: 300px;
+      display: grid;
+      place-items: center;
+      position: relative;
+      overflow: hidden;
+      border: 1px solid rgba(243, 201, 105, .25);
+      border-radius: 10px;
+      background:
+        linear-gradient(rgba(243, 201, 105, .08) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(243, 201, 105, .08) 1px, transparent 1px),
+        #0b0b09;
+      background-size: 24px 24px;
+    }
+
+    .blueprint-building {
+      width: 125px;
+      height: 175px;
+      position: relative;
+      border: 2px solid var(--gold);
+      background: repeating-linear-gradient(to bottom, transparent 0 22px, rgba(243, 201, 105, .5) 23px 25px);
+      box-shadow: 0 0 30px rgba(243, 201, 105, .15), inset 0 0 30px rgba(243, 201, 105, .09);
+      transform: perspective(500px) rotateY(-22deg) rotateX(4deg);
+      animation: blueprintFloat 5s ease-in-out infinite;
+    }
+
+    .blueprint-building::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: -35px;
+      width: 34px;
+      height: 100%;
+      border: 1px solid var(--gold-dark);
+      background: repeating-linear-gradient(to bottom, #292015 0 22px, #ad8137 23px 24px);
+      transform-origin: left;
+      transform: rotateY(55deg);
+    }
+
+    .blueprint-building::after {
+      content: "CAD / BIM";
+      position: absolute;
+      bottom: 20px;
+      left: -22px;
+      width: 165px;
+      padding: 8px;
+      text-align: center;
+      background: #10100e;
+      color: var(--gold-light);
+      border: 1px solid var(--gold-dark);
+      font: 700 .72rem "Orbitron", sans-serif;
+    }
+
+    .about-copy h2 {
+      font-family: "Orbitron", sans-serif;
+      font-size: clamp(1.65rem, 3vw, 2.5rem);
+      line-height: 1.3;
+    }
+
+    .about-copy p { color: var(--muted); line-height: 1.85; }
+
+    .check-list {
+      display: grid;
+      gap: 12px;
+      margin: 24px 0 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .check-list li { color: #e7dfcb; }
+    .check-list li::before { content: "✦"; color: var(--gold); margin-right: 10px; }
+
+    /* Contact */
+    .contact-box {
+      text-align: center;
+      padding: clamp(28px, 6vw, 65px) 20px;
+      border: 1px solid rgba(243, 201, 105, .38);
+      border-radius: 16px;
+      background:
+        radial-gradient(ellipse at 50% 0%, rgba(243, 201, 105, .13), transparent 65%),
+        #10100e;
+      box-shadow: 0 0 60px rgba(243, 201, 105, .045);
+    }
+
+    .contact-box h2 {
+      margin: 15px 0;
+      font: 700 clamp(1.8rem, 4vw, 3rem)/1.2 "Orbitron", sans-serif;
+    }
+
+    .contact-box p {
+      max-width: 620px;
+      margin: 0 auto 26px;
+      color: var(--muted);
+      line-height: 1.8;
+    }
+
+    .phone-number {
+      display: block;
+      margin: 18px 0 25px;
+      color: var(--gold-light);
+      font: 700 clamp(1.5rem, 4vw, 2.3rem) "Orbitron", sans-serif;
+      letter-spacing: .04em;
+    }
+
+    footer {
+      padding: 26px 0;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: .85rem;
+      text-align: center;
+      line-height: 1.8;
+    }
+
+    footer strong { color: var(--gold); }
+
+    /* Scroll reveal */
+    .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity .75s ease, transform .75s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @keyframes sceneFloat {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-9px); }
+    }
+
+    @keyframes buildingHover {
+      0%, 100% { margin-top: 0; }
+      50% { margin-top: -12px; }
+    }
+
+    @keyframes tagFloat {
+      0%, 100% { translate: 0 0; }
+      50% { translate: 0 -12px; }
+    }
+
+    @keyframes orbitSpin {
+      from { rotate: 0deg; }
+      to { rotate: 360deg; }
+    }
+
+    @keyframes sparkle {
+      0%, 100% { opacity: .25; scale: .7; }
+      50% { opacity: 1; scale: 1.4; }
+    }
+
+    @keyframes blueprintFloat {
+      0%, 100% { translate: 0 0; }
+      50% { translate: 0 -9px; }
+    }
+
+    @media (max-width: 1000px) {
+      .hero { grid-template-columns: 1fr; padding-top: 60px; }
+      .hero-copy { text-align: center; }
+      .hero-copy p { margin-left: auto; margin-right: auto; }
+      .hero-actions, .hero-note { justify-content: center; }
+      .scene { max-width: 560px; margin: auto; }
+      .services-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .about-panel { grid-template-columns: 1fr; }
+      .blueprint { min-height: 260px; }
+    }
+
+    @media (max-width: 650px) {
+      .container { width: min(100% - 28px, var(--max)); }
+      .nav { min-height: 68px; gap: 10px; }
+      .brand { font-size: .8rem; }
+      .nav-links { gap: 12px; font-size: .78rem; }
+      .nav-links a:not(.nav-cta) { display: none; }
+      .nav-cta { padding: 10px 12px; font-size: .8rem; }
+      .hero { min-height: auto; padding-top: 54px; padding-bottom: 40px; gap: 4px; }
+      h1 { font-size: clamp(2rem, 10vw, 3.1rem); }
+      .hero-copy p { font-size: .96rem; }
+      .hero-actions .btn { width: 100%; }
+      .scene { height: 360px; transform: scale(.86); transform-origin: top center; margin-bottom: -35px; }
+      .orbit { width: 280px; height: 280px; }
+      .orbit.two { width: 340px; height: 340px; }
+      .building { transform: translate(-50%, -50%) scale(.82) rotateY(-25deg) rotateX(7deg); }
+      .float-tag { font-size: .7rem; padding: 9px 10px; }
+      .tag-a { left: -4px; }
+      .tag-b { right: -4px; }
+      .stats { margin-bottom: 55px; }
+      .stat { padding: 16px 7px; }
+      .stat strong { font-size: .9rem; }
+      .stat span { font-size: .7rem; }
+      section { padding: 35px 0 65px; }
+      .services-grid { gap: 12px; }
+      .service-card { min-height: 230px; padding: 18px 14px; }
+      .service-card h3 { font-size: .94rem; }
+      .service-card p { font-size: .81rem; }
+      .service-icon { width: 47px; height: 47px; font-size: 1.3rem; margin-bottom: 18px; }
+      .service-number { font-size: 1rem; top: 10px; right: 10px; }
+      .about-panel { gap: 25px; padding: 20px; }
+      .blueprint { min-height: 230px; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+        transition-duration: .01ms !important;
+      }
+      .reveal { opacity: 1; transform: none; }
+    }
+  </style>
 </head>
 
 <body>
-
   <header>
-    <a class="logo" href="#home">UNITED <span>CAD</span></a>
-    <nav aria-label="Main navigation">
-      <a href="#home">Home</a>
-      <a href="#services">Services</a>
-      <a href="#about">About</a>
-      <a href="#contact">Contact</a>
-    </nav>
+    <div class="container nav">
+      <a class="brand" href="#home" aria-label="United CAD Services home">
+        UNITED <span>CAD</span>
+      </a>
+
+      <nav class="nav-links" aria-label="Main navigation">
+        <a href="#home">Home</a>
+        <a href="#services">Services</a>
+        <a href="#about">About</a>
+        <a class="nav-cta" href="#contact">Contact Us ↗</a>
+      </nav>
+    </div>
   </header>
 
   <main>
-    <section class="hero" id="home">
-      <div>
-        <div class="tag">DESIGN · DRAFTING · DETAIL</div>
-        <h1>Ideas Into <span>Precision</span> Designs</h1>
-        <p class="intro">
-          Welcome to United CAD Services. Explore professional CAD
-          design and drafting solutions with a modern, technology-focused
-          approach.
+    <section class="container hero" id="home">
+      <div class="hero-copy">
+        <div class="eyebrow">Design · Planning · Visualisation</div>
+        <h1>
+          Shape Your
+          <span>Vision in 3D.</span>
+        </h1>
+        <p>
+          United CAD Services brings your ideas to life with CAD drafting,
+          Building Information Modelling, interior design, project planning
+          and 3D visualisation.
         </p>
-        <a class="button" href="tel:+919845825097">Call Us Now</a>
-        <a class="button secondary" href="#services">Our Services</a>
+
+        <div class="hero-actions">
+          <a class="btn" href="#services">Explore Our Services <span>↗</span></a>
+          <a class="btn btn-outline" href="tel:+919845825097">☎ Call Us</a>
+        </div>
+
+        <div class="hero-note">
+          <span>CAD & BIM Solutions</span>
+          <span>Planning & Design</span>
+          <span>3D Visualisation</span>
+        </div>
       </div>
 
-      <div class="visual" aria-label="Animated 3D CAD-inspired cube">
-        <div class="cube-scene">
-          <div class="cube">
-            <div class="face front">CAD</div>
-            <div class="face back">3D</div>
-            <div class="face right">UCS</div>
-            <div class="face left">DESIGN</div>
-            <div class="face top">U</div>
-            <div class="face bottom">CAD</div>
+      <div class="scene-wrap" aria-label="Decorative 3D architectural building animation">
+        <div class="scene">
+          <div class="scene-glow"></div>
+          <div class="orbit"></div>
+          <div class="orbit two"></div>
+
+          <div class="building">
+            <div class="tower-front"></div>
+            <div class="tower-side"></div>
+            <div class="tower-roof"></div>
+            <div class="tower-base"></div>
+            <div class="building-label">UNITED CAD</div>
           </div>
+
+          <div class="float-tag tag-a">⌘ CAD DESIGN</div>
+          <div class="float-tag tag-b">▦ BIM MODELLING</div>
+          <div class="float-tag tag-c">✧ 3D VISUALS</div>
+
+          <i class="spark s1"></i>
+          <i class="spark s2"></i>
+          <i class="spark s3"></i>
+          <i class="spark s4"></i>
         </div>
       </div>
     </section>
 
-    <section class="section" id="services">
-      <div class="section-title">
-        <h2>Our <span>CAD Services</span></h2>
-        <p>Design-focused solutions for your project requirements.</p>
+    <div class="container stats reveal">
+      <div class="stat">
+        <strong>CAD</strong>
+        <span>Technical Design</span>
       </div>
+      <div class="stat">
+        <strong>BIM</strong>
+        <span>Building Information</span>
+      </div>
+      <div class="stat">
+        <strong>3D</strong>
+        <span>Design Visualisation</span>
+      </div>
+    </div>
 
-      <div class="services">
-        <article class="service-card">
-          <div class="service-icon">??</div>
-          <h3>2D CAD Drafting</h3>
-          <p>Detailed 2D drawings and drafting support based on your project requirements.</p>
-        </article>
+    <section id="services">
+      <div class="container">
+        <div class="section-heading reveal">
+          <div class="eyebrow">What We Do</div>
+          <h2>Our <span class="gold">Core Services</span></h2>
+          <p>
+            Design-focused solutions to support your project from technical
+            drawings and modelling through planning and visualisation.
+          </p>
+        </div>
 
-        <article class="service-card">
-          <div class="service-icon">??</div>
-          <h3>3D CAD Modelling</h3>
-          <p>Three-dimensional modelling concepts to help visualise components and designs.</p>
-        </article>
+        <div class="services-grid">
+          <article class="service-card reveal">
+            <span class="service-number">01</span>
+            <div class="service-icon">⌘</div>
+            <h3>AutoCAD Drafting</h3>
+            <p>Precise 2D drafting and technical drawing support for project documentation.</p>
+          </article>
 
-        <article class="service-card">
-          <div class="service-icon">??</div>
-          <h3>Design Support</h3>
-          <p>CAD drawing and design support tailored to the needs of your project.</p>
-        </article>
+          <article class="service-card reveal">
+            <span class="service-number">02</span>
+            <div class="service-icon">▦</div>
+            <h3>BIM Services</h3>
+            <p>Building Information Modelling support for coordinated project workflows.</p>
+          </article>
+
+          <article class="service-card reveal">
+            <span class="service-number">03</span>
+            <div class="service-icon">◇</div>
+            <h3>Interior Design</h3>
+            <p>Interior planning and visual concepts to help communicate design ideas.</p>
+          </article>
+
+          <article class="service-card reveal">
+            <span class="service-number">04</span>
+            <div class="service-icon">◷</div>
+            <h3>Primavera Project Management</h3>
+            <p>Project planning and scheduling support using Primavera workflows.</p>
+          </article>
+
+          <article class="service-card reveal">
+            <span class="service-number">05</span>
+            <div class="service-icon">⬡</div>
+            <h3>3D Modelling</h3>
+            <p>Three-dimensional models to help present and understand design concepts.</p>
+          </article>
+
+          <article class="service-card reveal">
+            <span class="service-number">06</span>
+            <div class="service-icon">⌂</div>
+            <h3>Architectural Drafting</h3>
+            <p>Architectural drawing and layout documentation for building projects.</p>
+          </article>
+
+          <article class="service-card reveal">
+            <span class="service-number">07</span>
+            <div class="service-icon">◫</div>
+            <h3>Project Planning</h3>
+            <p>Planning and scheduling support to organise project activities and timelines.</p>
+          </article>
+
+          <article class="service-card reveal">
+            <span class="service-number">08</span>
+            <div class="service-icon">✧</div>
+            <h3>3D Design Visualisation</h3>
+            <p>Visual presentations that help clients understand proposed designs.</p>
+          </article>
+        </div>
       </div>
     </section>
 
-    <section class="section about" id="about">
-      <div class="section-title">
-        <h2>About <span>United CAD Services</span></h2>
+    <section id="about">
+      <div class="container about-panel reveal">
+        <div class="blueprint" aria-hidden="true">
+          <div class="blueprint-building"></div>
+        </div>
+
+        <div class="about-copy">
+          <div class="eyebrow">About United CAD Services</div>
+          <h2>Ideas Turned Into <span class="gold">Design.</span></h2>
+          <p>
+            We focus on CAD-based design, building modelling, interiors,
+            project planning and 3D visualisation. Our goal is to help make
+            technical ideas easier to plan, present and understand.
+          </p>
+          <ul class="check-list">
+            <li>CAD drafting and design documentation</li>
+            <li>BIM and 3D modelling support</li>
+            <li>Interior and architectural design concepts</li>
+            <li>Project scheduling and visual presentations</li>
+          </ul>
+        </div>
       </div>
-      <p>
-        United CAD Services focuses on CAD design and drafting solutions.
-        Contact us to discuss your requirements, project scope and service
-        availability.
-      </p>
     </section>
 
-    <section class="section contact" id="contact">
-      <h2>Let's Discuss Your <span style="color:#ffad42">Project</span></h2>
-      <p>Contact United CAD Services for enquiries and project discussions.</p>
-
-      <a class="phone" href="tel:+919845825097">? 9845825097</a>
-
-      <a class="button" href="tel:+919845825097">Call United CAD Services</a>
+    <section id="contact">
+      <div class="container">
+        <div class="contact-box reveal">
+          <div class="eyebrow">Let's Discuss Your Project</div>
+          <h2>Ready to Build Your <span class="gold">Vision?</span></h2>
+          <p>
+            Contact United CAD Services to discuss your CAD, BIM, interior
+            design, planning or 3D visualisation requirements.
+          </p>
+          <a class="phone-number" href="tel:+919845825097">9845825097</a>
+          <a class="btn" href="tel:+919845825097">☎ Call United CAD Services</a>
+        </div>
+      </div>
     </section>
   </main>
 
   <footer>
-    <p>© <span id="year"></span> United CAD Services. All rights reserved.</p>
-    <p>CAD Design & Drafting Solutions</p>
+    <div class="container">
+      <strong>UNITED CAD SERVICES</strong><br>
+      CAD · BIM · Interior Design · Project Planning · 3D Visualisation<br>
+      Phone: <a href="tel:+919845825097">9845825097</a><br>
+      © <span id="year"></span> United CAD Services. All rights reserved.
+    </div>
   </footer>
 
   <script>
+    // Automatically update the copyright year.
     document.getElementById("year").textContent = new Date().getFullYear();
-  </script>
 
+    // Reveal sections smoothly as they enter the viewport.
+    const revealItems = document.querySelectorAll(".reveal");
+
+    if ("IntersectionObserver" in window) {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.12 });
+
+      revealItems.forEach((item) => observer.observe(item));
+    } else {
+      revealItems.forEach((item) => item.classList.add("visible"));
+    }
+
+    // Desktop 3D tilt effect. Disable it on touch devices.
+    const supportsFinePointer = window.matchMedia(
+      "(hover: hover) and (pointer: fine)"
+    ).matches;
+
+    const reduceMotion = window.matchMedia(
+      "(prefers-reduced-motion: reduce)"
+    ).matches;
+
+    if (supportsFinePointer && !reduceMotion) {
+      document.querySelectorAll(".service-card").forEach((card) => {
+        card.addEventListener("pointermove", (event) => {
+          const rect = card.getBoundingClientRect();
+          const x = (event.clientX - rect.left) / rect.width;
+          const y = (event.clientY - rect.top) / rect.height;
+          const rotateY = (x - 0.5) * 12;
+          const rotateX = (0.5 - y) * 12;
+
+          card.style.transform =
+            `perspective(900px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-4px)`;
+        });
+
+        card.addEventListener("pointerleave", () => {
+          card.style.transform =
+            "perspective(900px) rotateX(0) rotateY(0) translateY(0)";
+        });
+      });
+    }
+  </script>
 </body>
 </html>
