@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="theme-color" content="#080a0e" />
+<title>United CAD Services | 3D Construction</title>
+<style>
+:root{--gold:#e7b84f;--gold2:#ffdb83;--bg:#080a0e;--muted:#b8bdc6}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:#fff;font-family:Inter,Arial,Helvetica,sans-serif}
+a{color:inherit;text-decoration:none}
+.hero{position:relative;min-height:100vh;min-height:100svh;overflow:hidden;isolation:isolate;background:radial-gradient(ellipse at 72% 50%,#292012 0%,#101116 42%,#080a0e 78%)}
+#scene{position:absolute;inset:0;width:100%;height:100%;z-index:-1;display:block}
+.hero:after{content:"";position:absolute;inset:0;z-index:0;pointer-events:none;background:linear-gradient(90deg,rgba(8,10,14,.98) 0%,rgba(8,10,14,.88) 32%,rgba(8,10,14,.25) 67%,rgba(8,10,14,.15) 100%),linear-gradient(0deg,rgba(8,10,14,.68),transparent 30%,transparent 75%,rgba(8,10,14,.38))}
+.nav{position:relative;z-index:3;display:flex;align-items:center;justify-content:space-between;gap:20px;padding:24px 6.5%;border-bottom:1px solid #e7b84f30}
+.brand{font-weight:900;letter-spacing:1.5px;font-size:20px;color:var(--gold)}
+.brand small{display:block;color:#fff;font-size:9px;letter-spacing:5px;margin-top:5px}
+.links{display:flex;gap:27px;align-items:center}
+.links a{font-size:11px;letter-spacing:1.5px;color:#e2e2e2;transition:color .2s}
+.links a:hover{color:var(--gold)}
+.nav-cta{padding:12px 17px;border:1px solid #e7b84f9c;color:var(--gold)!important}
+.content{position:relative;z-index:2;width:min(660px,58%);padding:clamp(70px,10vh,125px) 0 90px 8%}
+.eyebrow{display:flex;align-items:center;gap:12px;color:var(--gold);font-size:10px;font-weight:800;letter-spacing:4px;margin-bottom:24px}
+.eyebrow:before{content:"";width:34px;height:1px;background:var(--gold)}
+h1{font-size:clamp(45px,6.3vw,88px);line-height:.98;letter-spacing:-3px;margin-bottom:24px}
+h1 span{color:var(--gold);text-shadow:0 0 35px #e7b84f24}
+.lead{max-width:465px;color:var(--muted);font-size:14px;line-height:1.9;margin-bottom:29px}
+.actions{display:flex;gap:13px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:15px 20px;font-size:10px;font-weight:800;letter-spacing:1.2px;transition:transform .2s,background .2s;cursor:pointer}
+.btn:hover{transform:translateY(-3px)}
+.primary{background:var(--gold);color:#111}
+.secondary{border:1px solid #e7b84f80;background:#0a0b0dc9}
+.stats{display:flex;gap:34px;flex-wrap:wrap;margin-top:54px}
+.stat strong{display:block;font-size:24px;color:var(--gold);margin-bottom:7px}
+.stat small{font-size:9px;letter-spacing:1.8px;color:#b4b4b4}
+.scene-label{position:absolute;z-index:2;right:5%;bottom:35px;color:#e5c477;font-size:9px;letter-spacing:3px}
+.scene-label:before{content:"";display:inline-block;width:26px;height:1px;background:var(--gold);vertical-align:middle;margin-right:10px}
+.hint{position:absolute;z-index:2;right:5%;top:48%;writing-mode:vertical-rl;color:#d4b46a;font-size:9px;letter-spacing:3px}
+.section{padding:80px 8%;background:#0b0d11;border-top:1px solid #e7b84f25}
+.section h2{font-size:clamp(28px,4vw,46px);margin-bottom:12px}
+.section h2 span{color:var(--gold)}
+.section p{color:var(--muted);line-height:1.8;max-width:650px}
+.cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:30px}
+.card{border:1px solid #e7b84f30;background:linear-gradient(145deg,#17181b,#0d0f13);padding:23px;min-height:140px}
+.card b{display:block;color:var(--gold);margin-bottom:10px}
+.card p{font-size:13px}
+footer{padding:25px 8%;border-top:1px solid #e7b84f30;color:#9ea2a9;font-size:12px}
+@media(max-width:900px){
+ .nav{padding:20px 5%}.links{gap:15px}.links a{font-size:9px}
+ .content{width:74%;padding:85px 0 100px 6%}
+ .hero:after{background:linear-gradient(90deg,rgba(8,10,14,.97),rgba(8,10,14,.7) 52%,rgba(8,10,14,.28)),linear-gradient(0deg,rgba(8,10,14,.75),transparent 45%)}
+ .cards{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media(max-width:620px){
+ .nav{padding:18px 5%}.brand{font-size:17px}.links{display:none}
+ .content{width:100%;padding:82px 6% 95px}
+ h1{font-size:clamp(43px,12vw,67px);letter-spacing:-1.8px}
+ .lead{font-size:13px;max-width:360px}
+ .hero:after{background:linear-gradient(90deg,rgba(8,10,14,.96),rgba(8,10,14,.76) 65%,rgba(8,10,14,.48)),linear-gradient(0deg,rgba(8,10,14,.82),transparent 55%)}
+ #scene{opacity:.83}
+ .stats{gap:22px;margin-top:42px}.stat strong{font-size:21px}.stat small{font-size:8px}
+ .scene-label{font-size:8px;bottom:20px;right:5%}.hint{display:none}
+ .cards{grid-template-columns:1fr}.section{padding:58px 6%}
+}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.btn{transition:none}}
+</style>
+</head>
+<body>
+<section class="hero" id="home">
+  <canvas id="scene" aria-label="Animated 3D construction site"></canvas>
+  <header class="nav">
+    <a class="brand" href="#home">UNITED CAD<small>S E R V I C E S</small></a>
+    <nav class="links" aria-label="Main navigation">
+      <a href="#home">HOME</a><a href="#services">SERVICES</a><a href="#projects">PROJECTS</a><a class="nav-cta" href="#contact">CONTACT ↗</a>
+    </nav>
+  </header>
+  <main class="content">
+    <div class="eyebrow">ENGINEERING · DESIGN · INNOVATION</div>
+    <h1>BUILDING<br>THE <span>FUTURE.</span></h1>
+    <p class="lead">Architectural CAD drafting, structural detailing and immersive 3D visualization — engineered with precision and built around your vision.</p>
+    <div class="actions">
+      <a class="btn primary" href="#projects">EXPLORE PROJECTS ↗</a>
+      <a class="btn secondary" href="#services">OUR SERVICES</a>
+    </div>
+    <div class="stats">
+      <div class="stat"><strong>3D</strong><small>VISUALIZATION</small></div>
+      <div class="stat"><strong>CAD</strong><small>PRECISION DESIGN</small></div>
+      <div class="stat"><strong>360°</strong><small>PROJECT VISION</small></div>
+    </div>
+  </main>
+  <div class="hint">MOVE YOUR MOUSE TO EXPLORE</div>
+  <div class="scene-label">DIGITAL CONSTRUCTION ENVIRONMENT</div>
+</section>
+
+<section class="section" id="services">
+  <h2>Built on <span>precision.</span></h2>
+  <p>From architectural concepts to structural details, United CAD Services helps communicate projects clearly through technical drafting and visualization.</p>
+  <div class="cards">
+    <article class="card"><b>01 / CAD DRAFTING</b><p>Architectural layouts, elevations and detailed technical drawings.</p></article>
+    <article class="card"><b>02 / STRUCTURAL DETAILING</b><p>Visual coordination of slabs, columns, beams and framing systems.</p></article>
+    <article class="card"><b>03 / 3D VISUALIZATION</b><p>Immersive project views to help teams communicate design intent.</p></article>
+  </div>
+</section>
+<section class="section" id="projects">
+  <h2>Project <span>showcase.</span></h2>
+  <p>Explore the construction scene above. Replace this section with your real project images, project names and verified portfolio details.</p>
+</section>
+<section class="section" id="contact">
+  <h2>Let’s build your <span>vision.</span></h2>
+  <p>Contact United CAD Services to discuss your CAD drafting, structural detailing or 3D visualization requirements.</p>
+  <div class="actions" style="margin-top:22px"><a class="btn primary" href="mailto:info@example.com">EMAIL OUR TEAM ↗</a></div>
+  <p style="font-size:11px;margin-top:12px">Replace info@example.com with your actual business email and add your phone/address.</p>
+</section>
+<footer>© <span id="year"></span> United CAD Services. All rights reserved.</footer>
+
+<script type="importmap">
+{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js"}}
+</script>
+<script type="module">
+import * as THREE from 'three';
+
+const canvas = document.querySelector('#scene');
+const hero = document.querySelector('.hero');
+const scene = new THREE.Scene();
+scene.fog = new THREE.FogExp2(0x080a0e, 0.009);
+
+const camera = new THREE.PerspectiveCamera(43, 1, 0.1, 250);
+camera.position.set(17, 13, 30);
+const renderer = new THREE.WebGLRenderer({canvas, antialias:true, alpha:true});
+renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 1.6));
+renderer.shadowMap.enabled = true;
+renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+renderer.outputColorSpace = THREE.SRGBColorSpace;
+renderer.toneMapping = THREE.ACESFilmicToneMapping;
+renderer.toneMappingExposure = 1.25;
+
+scene.add(new THREE.HemisphereLight(0xcbdcff, 0x292012, 2.1));
+const keyLight = new THREE.DirectionalLight(0xffd48a, 3.2);
+keyLight.position.set(8,24,12); keyLight.castShadow = true;
+keyLight.shadow.mapSize.set(1024,1024); scene.add(keyLight);
+const goldLight = new THREE.PointLight(0xffb52e, 180, 90);
+goldLight.position.set(4,13,6); scene.add(goldLight);
+const blueLight = new THREE.PointLight(0x527ba5, 100, 70);
+blueLight.position.set(-15,10,-8); scene.add(blueLight);
+
+const mat = (color, metalness=0.2, roughness=0.65, emissive=0x000000) =>
+ new THREE.MeshStandardMaterial({color, metalness, roughness, emissive});
+const concrete=mat(0x555b61,.35,.8), concreteDark=mat(0x292d32,.5,.8);
+const gold=mat(0xd9a63c,.72,.3,0x382308), steel=mat(0x8a9299,.8,.3);
+const glass=mat(0x244357,.65,.18,0x0b1922), dark=mat(0x171b20,.65,.42);
+const safety=mat(0xffb52e,.15,.45), white=mat(0xc8c9c7,.1,.8);
+const jacket=mat(0xff7b20,.1,.55), tire=mat(0x111214,.05,.9);
+const cementBag=mat(0x9a927e,.05,.95), roadMat=mat(0x24282d,.15,.9);
+
+function addBox(parent,w,h,d,material,x,y,z, opts={}) {
+ const m=new THREE.Mesh(new THREE.BoxGeometry(w,h,d),material);
+ m.position.set(x,y,z); m.castShadow=true; m.receiveShadow=true;
+ if(opts.rx)m.rotation.x=opts.rx;if(opts.ry)m.rotation.y=opts.ry;if(opts.rz)m.rotation.z=opts.rz;
+ parent.add(m); return m;
+}
+function addCylinder(parent,rTop,rBottom,h,material,x,y,z,segments=12,rotation=null){
+ const m=new THREE.Mesh(new THREE.CylinderGeometry(rTop,rBottom,h,segments),material);
+ m.position.set(x,y,z); if(rotation)m.rotation.set(...rotation);
+ m.castShadow=true;m.receiveShadow=true;parent.add(m);return m;
+}
+function addLine(parent,a,b,material=gold,r=.035){
+ const start=new THREE.Vector3(...a),end=new THREE.Vector3(...b);
+ const dir=new THREE.Vector3().subVectors(end,start);
+ const mesh=new THREE.Mesh(new THREE.CylinderGeometry(r,r,dir.length(),6),material);
+ mesh.position.copy(start).add(end).multiplyScalar(.5);
+ mesh.quaternion.setFromUnitVectors(new THREE.Vector3(0,1,0),dir.normalize());
+ mesh.castShadow=true;parent.add(mesh);return mesh;
+}
+function addCable(parent,a,b,color=0xd8c17c){
+ const geo=new THREE.BufferGeometry().setFromPoints([new THREE.Vector3(...a),new THREE.Vector3(...b)]);
+ const line=new THREE.Line(geo,new THREE.LineBasicMaterial({color}));
+ parent.add(line);return line;
+}
+function addWheel(parent,x,y,z,r=.38,width=.22){
+ const w=addCylinder(parent,r,r,width,tire,x,y,z,16,[0,0,Math.PI/2]);
+ const hub=addCylinder(parent,r*.43,r*.43,width*1.08,steel,x,y,z,12,[0,0,Math.PI/2]);
+ return [w,hub];
+}
+
+// Site base and access road
+addBox(scene,100,.35,80,concreteDark,0,-.23,0);
+addBox(scene,70,.035,8,roadMat,0,-.035,8);
+for(let x=-33;x<35;x+=5)addBox(scene,.9,.025,.13,gold,x,.0,8);
+const grid=new THREE.GridHelper(100,100,0xd6a63c,0x51401d);
+grid.position.y=-.035;grid.material.transparent=true;grid.material.opacity=.36;scene.add(grid);
+
+// Main multi-storey building with slabs, columns, beams, glass and wireframe
+const building=new THREE.Group();building.position.set(2,0,-1);scene.add(building);
+const floorCount=12, fh=1.05, bw=8.2, bd=6.1;
+for(let f=0;f<floorCount;f++){
+ const y=.18+f*fh;
+ addBox(building,bw,.18,bd,f===floorCount-1?gold:concrete,0,y,0);
+ // columns
+ for(const x of [-3.9,-1.3,1.3,3.9])for(const z of [-2.85,2.85])
+  addBox(building,.22,fh,.22,gold,x,y+fh/2,z);
+ // front/back beams
+ for(const x of [-2.6,0,2.6]){
+  addBox(building,2.5,.13,.16,steel,x,y+fh-.12,2.85);
+  addBox(building,2.5,.13,.16,steel,x,y+fh-.12,-2.85);
+  addBox(building,2.32,.70,.045,glass,x,y+.52,2.9);
+  addBox(building,2.32,.70,.045,glass,x,y+.52,-2.9);
+ }
+ // side glazing
+ for(const z of [-1.9,0,1.9]){
+  addBox(building,.045,.70,1.55,glass,4.12,y+.52,z);
+  addBox(building,.045,.70,1.55,glass,-4.12,y+.52,z);
+ }
+ // thin gold mullions
+ for(const x of [-3.85,-1.3,1.3,3.85]){
+  addBox(building,.035,.72,.06,gold,x,y+.52,2.94);
+ }
+}
+// rooftop parapet and exposed top steel frame
+for(const x of [-4.1,0,4.1])addBox(building,.12,1.2,.12,gold,x,floorCount*fh+.7,-2.9);
+for(const z of [-2.9,0,2.9])addBox(building,8.2,.12,.12,gold,0,floorCount*fh+1.3,z);
+// visible wireframe corners
+const wireMat=new THREE.LineBasicMaterial({color:0xffd16c,transparent:true,opacity:.6});
+const edges=new THREE.LineSegments(new THREE.EdgesGeometry(new THREE.BoxGeometry(bw,floorCount*fh,bd)),wireMat);
+edges.position.set(0,floorCount*fh/2+.2,0);building.add(edges);
+
+// Tower crane: mast lattice, base, jib, tie rods, trolley, cable, hook and suspended load
+const crane=new THREE.Group();crane.position.set(-8,0,-2);scene.add(crane);
+addBox(crane,2,.5,2,concrete,-0,.1,0);
+const mastH=18.5;
+for(const x of [-.32,.32])for(const z of [-.32,.32])addLine(crane,[x,.35,z],[x,mastH,z],gold,.055);
+for(let y=.8;y<mastH;y+=1.35){
+ for(const side of [-1,1]){
+  addLine(crane,[-.32,y,-.32],[.32,y+1.35,-.32],steel,.028);
+  addLine(crane,[.32,y,.32],[-.32,y+1.35,.32],steel,.028);
+  addLine(crane,[-.32,y,.32],[.32,y+1.35,.32],steel,.028);
+  addLine(crane,[.32,y,-.32],[-.32,y+1.35,-.32],steel,.028);
+ }
+}
+addBox(crane,.5,.45,.5,gold,0,mastH,0);
+const jibLength=14;
+addBox(crane,jibLength,.22,.32,gold,4.9,mastH+.1,0);
+addBox(crane,5.1,.2,.3,steel,-2.8,mastH+.1,0);
+for(let x=-2.5;x<11.5;x+=1.2){
+ addLine(crane,[x,mastH+.22,0],[x+.6,mastH+.85,0],steel,.025);
+ addLine(crane,[x+.6,mastH+.85,0],[x+1.2,mastH+.22,0],steel,.025);
+}
+addLine(crane,[0,mastH,0],[2,mastH+2.4,0],gold,.045);
+addLine(crane,[2,mastH+2.4,0],[8,mastH+.2,0],gold,.045);
+addBox(crane,1.8,.8,.9,concrete,-3.1,mastH-.7,0);
+const trolley=new THREE.Group();crane.add(trolley);
+addBox(trolley,.75,.35,.65,dark,0,mastH+.25,0);
+const cable=addCable(crane,[6,mastH,0],[6,11,0]);
+const loadGroup=new THREE.Group();crane.add(loadGroup);
+addBox(loadGroup,1.65,.95,1.15,concrete,0,0,0);
+for(let x of [-.7,.7])for(let z of [-.45,.45])addLine(loadGroup,[x,.48,z],[x+.05,.9,z],gold,.035);
+const hookRing=addCylinder(loadGroup,.19,.19,.09,gold,0,-.65,0,12,[Math.PI/2,0,0]);
+addLine(loadGroup,[0,-.45,0],[0,-.63,0],gold,.045);
+
+// Scaffolding beside building
+const scaffold=new THREE.Group();scaffold.position.set(7,0,5);scene.add(scaffold);
+for(let level=0;level<7;level++){
+ const y=.5+level*1.35;
+ for(const x of [-2.2,-.75,.75,2.2])addLine(scaffold,[x,.15,0],[x,y+1.35,0],steel,.045);
+ addLine(scaffold,[-2.2,y,0],[2.2,y,0],gold,.035);
+ addLine(scaffold,[-2.2,y,-.65],[2.2,y,-.65],steel,.03);
+ for(const x of [-2.2,.75])addLine(scaffold,[x,y,0],[x+1.45,y+1.35,0],gold,.025);
+ addBox(scaffold,4.5,.08,.8,concrete,0,y,-.3);
+}
+
+// Dump truck with chassis, cabin, bed, wheels
+const truck=new THREE.Group();truck.position.set(9,0,10);truck.rotation.y=-.15;scene.add(truck);
+addBox(truck,4.2,.42,1.45,dark,0,.78,0);
+addBox(truck,2.1,.95,1.4,gold,.75,1.42,0);
+addBox(truck,.9,.65,.06,glass,.85,1.55,.73);
+addBox(truck,1.35,1.1,1.5,concrete,-1.25,1.35,0,{rz:-.12});
+addBox(truck,1.4,.12,1.6,gold,-1.25,1.95,0,{rz:-.12});
+for(const x of [-1.35,.95])for(const z of [-.82,.82])addWheel(truck,x,.42,z,.4,.18);
+addBox(truck,1.7,.12,1.5,steel,-1.25,1.05,0);
+
+// Cement mixer truck with rotating drum
+const mixer=new THREE.Group();mixer.position.set(14,0,5);mixer.rotation.y=-.45;scene.add(mixer);
+addBox(mixer,3.8,.4,1.35,dark,0,.7,0);
+addBox(mixer,1.1,.95,1.25,gold,1.1,1.35,0);
+addBox(mixer,.65,.6,.05,glass,1.15,1.48,.65);
+const drumPivot=new THREE.Group();drumPivot.position.set(-.55,1.45,0);mixer.add(drumPivot);
+const drum=new THREE.Mesh(new THREE.CylinderGeometry(.62,.8,1.6,20),white);
+drum.rotation.z=Math.PI/2.8;drum.castShadow=true;drumPivot.add(drum);
+addCylinder(drumPivot,.25,.25,1.8,steel,0,0,0,12,[0,0,Math.PI/2]);
+for(const x of [-1.2,.95])for(const z of [-.76,.76])addWheel(mixer,x,.38,z,.34,.17);
+
+// Excavator with tracks, cab, boom, stick and bucket
+const excavator=new THREE.Group();excavator.position.set(-10,0,8);excavator.rotation.y=.35;scene.add(excavator);
+addBox(excavator,2.8,.48,1.35,dark,0,.48,0);
+for(const z of [-.73,.73]){
+ addBox(excavator,2.7,.35,.22,tire,0,.38,z);
+ for(let x=-1.05;x<=1.06;x+=.42)addWheel(excavator,x,.38,z,.22,.13);
+}
+addBox(excavator,1.3,.85,1.1,gold,.15,1.15,0);
+addBox(excavator,.75,.62,.07,glass,.2,1.22,.57);
+const boom=addLine(excavator,[.55,1.55,0],[1.65,3.05,0],gold,.2);
+addLine(excavator,[1.65,3.05,0],[2.75,2.5,0],gold,.15);
+addLine(excavator,[2.75,2.5,0],[3.15,1.7,0],steel,.1);
+addBox(excavator,.75,.3,.55,dark,3.18,1.62,0,{rz:-.25});
+
+// Pallets, crates, steel bars, cement bags, bricks and concrete blocks
+function makePallet(parent,x,z,scale=1){
+ const g=new THREE.Group();g.position.set(x,0,z);g.scale.setScalar(scale);parent.add(g);
+ addBox(g,1.8,.12,1.25,mat(0x795332),0,.12,0);
+ for(let xx of [-.65,0,.65])addBox(g,.18,.22,1.25,mat(0x9b7045),xx,.27,0);
+ return g;
+}
+makePallet(scene,-3,12,1.1);makePallet(scene,1,12,.9);makePallet(scene,4,12,.8);
+for(let i=0;i<3;i++)for(let j=0;j<3;j++)
+ addBox(scene,.52,.42,.45,cementBag,-3+i*.58,.52+j*.44,12);
+for(let i=0;i<6;i++){
+ const bar=addCylinder(scene,.045,.045,4,steel,-1+i*.17,.55,15,8,[0,0,Math.PI/2]);
+ bar.rotation.z=.015*i;
+}
+for(let i=0;i<5;i++)for(let j=0;j<2;j++)
+ addBox(scene,.75,.35,.45,mat(0x77746e),6+i*.8,.2+j*.37,13);
+for(let i=0;i<4;i++)addBox(scene,.9,.7,.8,concrete,13+i*1.05,.35,13);
+
+// Perimeter fencing and road safety barriers
+for(let x=-22;x<=22;x+=2.5){
+ addBox(scene,.09,1.5,.09,gold,x,.55,-14);
+ if(x<22)addBox(scene,2.5,.08,.08,steel,x+1.25,.95,-14);
+}
+addBox(scene,46,.12,.12,gold,0,.18,-14);
+for(let x=-15;x<=15;x+=3){
+ addBox(scene,1.8,.55,.45,concrete,x,.27,6.0);
+ addBox(scene,1.4,.09,.47,safety,x,.44,6.0);
+}
+
+// Simple stylized workers: boots, legs, torso, arms, head and safety helmet
+function makeWorker(x,z,scale=1,rot=0){
+ const g=new THREE.Group();g.position.set(x,0,z);g.scale.setScalar(scale);g.rotation.y=rot;scene.add(g);
+ const skin=mat(0xb9825c,.05,.8);
+ // boots and legs
+ for(const dx of [-.13,.13]){
+  addBox(g,.15,.13,.24,dark,dx,.08,.03);
+  addBox(g,.13,.42,.14,steel,dx,.33,0);
+ }
+ // reflective jacket torso
+ addBox(g,.43,.55,.25,jacket,0,.82,0);
+ addBox(g,.055,.52,.27,white,0,.82,.14);
+ // arms and hands
+ for(const s of [-1,1]){
+  addLine(g,[s*.22,1.02,0],[s*.35,.68,.02],jacket,.075);
+  addCylinder(g,.065,.065,.12,skin,s*.35,.61,.02,8);
+ }
+ addCylinder(g,.16,.16,.22,skin,0,1.25,0,12);
+ addCylinder(g,.2,.2,.1,safety,0,1.4,0,12);
+ addBox(g,.25,.035,.25,safety,0,1.36,0);
+ return g;
+}
+const workers=[
+ makeWorker(-5,5,.9,.2),makeWorker(-2,10,.85,-.3),
+ makeWorker(5,9,.9,.4),makeWorker(11,1,.8,-.5),
+ makeWorker(2,14,.85,.2)
+];
+
+// Small site lamps
+for(const [x,z] of [[-15,1],[15,-3],[-4,-11],[10,15]]){
+ addBox(scene,.12,2.5,.12,steel,x,1.25,z);
+ addBox(scene,.6,.15,.4,gold,x,2.55,z);
+ const lamp=new THREE.PointLight(0xffc85e,18,8);lamp.position.set(x,2.8,z);scene.add(lamp);
+}
+
+// Animated gold dust particles
+const particleCount=650, particlePositions=new Float32Array(particleCount*3);
+for(let i=0;i<particleCount;i++){
+ particlePositions[i*3]=(Math.random()-.5)*48;
+ particlePositions[i*3+1]=Math.random()*25;
+ particlePositions[i*3+2]=(Math.random()-.5)*32;
+}
+const pGeo=new THREE.BufferGeometry();
+pGeo.setAttribute('position',new THREE.BufferAttribute(particlePositions,3));
+const dust=new THREE.Points(pGeo,new THREE.PointsMaterial({color:0xf5c65c,size:.065,transparent:true,opacity:.8}));
+scene.add(dust);
+
+// Pointer interaction and responsive camera framing
+let pointerX=0,pointerY=0,targetX=0,targetY=0;
+hero.addEventListener('pointermove',e=>{
+ const r=hero.getBoundingClientRect();
+ pointerX=(e.clientX-r.left)/r.width-.5;
+ pointerY=(e.clientY-r.top)/r.height-.5;
+ targetX=pointerX*3.2;targetY=pointerY*1.2;
+},{passive:true});
+hero.addEventListener('pointerleave',()=>{targetX=0;targetY=0},{passive:true});
+
+function resize(){
+ const w=hero.clientWidth,h=hero.clientHeight;
+ camera.aspect=w/h;
+ camera.fov=w<620?51:43;
+ camera.position.z=w<620?37:(w<900?33:30);
+ camera.updateProjectionMatrix();
+ renderer.setSize(w,h,false);
+}
+window.addEventListener('resize',resize);resize();
+
+const clock=new THREE.Clock();
+function animate(){
+ requestAnimationFrame(animate);
+ const t=clock.getElapsedTime();
+ camera.position.x+=(17+targetX-camera.position.x)*.025;
+ camera.position.y+=(13-targetY-camera.position.y)*.025;
+ camera.lookAt(0,7,0);
+ // gently move crane trolley and load
+ const trolleyX=5.3+Math.sin(t*.48)*2.0;
+ trolley.position.x=trolleyX;
+ loadGroup.position.set(trolleyX,14.7+Math.sin(t*.55)*.5,0);
+ const ca=cable.geometry.attributes.position;
+ ca.setXYZ(0,trolleyX,18.5,0);
+ ca.setXYZ(1,trolleyX,loadGroup.position.y+.55,0);
+ ca.needsUpdate=true;
+ loadGroup.rotation.z=Math.sin(t*.7)*.045;
+ drumPivot.rotation.x=t*.8;
+ dust.rotation.y=t*.012;
+ const pos=pGeo.attributes.position;
+ for(let i=0;i<particleCount;i++){
+  pos.array[i*3+1]+=.008;
+  if(pos.array[i*3+1]>25)pos.array[i*3+1]=0;
+ }
+ pos.needsUpdate=true;
+ goldLight.intensity=175+Math.sin(t*1.2)*12;
+ renderer.render(scene,camera);
+}
+animate();
+document.querySelector('#year').textContent=new Date().getFullYear();
+</script>
+</body>
+</html>
