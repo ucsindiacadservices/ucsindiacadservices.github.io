@@ -5,12 +5,13 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>United CAD Services | AutoCAD, BIM, Interiors & Primavera</title>
-  <meta name="description" content="United CAD Services offers AutoCAD drafting, BIM, interior design, 3D modelling and Primavera project management services. Call 9845825097.">
+  <title>United CAD Services | CAD Design & Drafting</title>
+
+  <meta name="description" content="United CAD Services offers CAD design and drafting solutions. Contact us at 9845825097 for enquiries.">
   <meta name="robots" content="index, follow">
   <meta name="theme-color" content="#07152f">
 
-  <!-- Replace with your actual GitHub Pages URL -->
+  <!-- Replace with your actual GitHub Pages website URL -->
   <link rel="canonical" href="https://YOUR-USERNAME.github.io/YOUR-REPOSITORY/">
 
   <style>
@@ -20,12 +21,14 @@
       box-sizing: border-box;
     }
 
-    html { scroll-behavior: smooth; }
+    html {
+      scroll-behavior: smooth;
+    }
 
     body {
       font-family: Arial, Helvetica, sans-serif;
       background: #07152f;
-      color: #fff;
+      color: #ffffff;
       overflow-x: hidden;
     }
 
@@ -35,81 +38,79 @@
     }
 
     header {
-      position: sticky;
-      top: 0;
-      z-index: 100;
       display: flex;
-      align-items: center;
       justify-content: space-between;
-      flex-wrap: wrap;
+      align-items: center;
       gap: 20px;
-      padding: 20px 7%;
-      background: rgba(5, 17, 39, .95);
-      border-bottom: 1px solid #17456d;
-      backdrop-filter: blur(12px);
+      padding: 22px 8%;
+      background: rgba(7, 21, 47, 0.94);
+      border-bottom: 1px solid rgba(76, 180, 255, 0.25);
     }
 
     .logo {
-      font-size: 24px;
-      font-weight: 900;
-      color: #45d0ff;
-      letter-spacing: 1px;
+      font-size: 23px;
+      font-weight: 800;
+      color: #45c8ff;
     }
 
-    .logo span { color: #ffad42; }
+    .logo span {
+      color: #ffad42;
+    }
 
     nav {
       display: flex;
-      flex-wrap: wrap;
       gap: 22px;
+      flex-wrap: wrap;
     }
 
     nav a {
-      color: #dceaff;
+      color: #d8e8ff;
       font-size: 14px;
-      transition: color .3s;
     }
 
-    nav a:hover { color: #ffad42; }
+    nav a:hover {
+      color: #ffad42;
+    }
 
     .hero {
-      min-height: 650px;
-      padding: 75px 8%;
+      min-height: 620px;
+      padding: 80px 8%;
       display: grid;
-      grid-template-columns: 1.1fr .9fr;
+      grid-template-columns: 1.1fr 0.9fr;
       align-items: center;
-      gap: 35px;
+      gap: 45px;
       background:
-        radial-gradient(ellipse at 80% 40%, #164477 0%, transparent 48%),
-        linear-gradient(135deg, #07152f, #0a2345);
+        radial-gradient(ellipse at 80% 40%, #123e70 0%, transparent 45%),
+        linear-gradient(135deg, #07152f, #0b2348);
     }
 
     .tag {
       display: inline-block;
-      color: #54d7ff;
-      border: 1px solid #2688bf;
-      border-radius: 30px;
       padding: 9px 15px;
-      margin-bottom: 24px;
+      color: #5bd6ff;
+      border: 1px solid #278bc8;
+      border-radius: 30px;
       font-size: 12px;
       letter-spacing: 2px;
+      margin-bottom: 22px;
     }
 
     h1 {
-      font-size: clamp(39px, 5vw, 66px);
+      font-size: clamp(38px, 5vw, 65px);
       line-height: 1.12;
-      margin-bottom: 24px;
+      margin-bottom: 22px;
     }
 
-    h1 span, .section-title span {
+    h1 span {
       color: #ffad42;
+      text-shadow: 0 0 25px rgba(255, 173, 66, 0.2);
     }
 
     .intro {
-      max-width: 580px;
-      color: #c3d5ee;
+      color: #bfd1ed;
       font-size: 17px;
       line-height: 1.8;
+      max-width: 560px;
       margin-bottom: 30px;
     }
 
@@ -117,39 +118,39 @@
       display: inline-block;
       padding: 15px 23px;
       border-radius: 9px;
-      background: linear-gradient(135deg, #53d6ff, #1685e9);
-      color: #06152d;
-      font-weight: bold;
-      margin: 4px 6px 4px 0;
-      box-shadow: 0 10px 30px #1489df38;
-      transition: transform .3s, box-shadow .3s;
+      background: linear-gradient(135deg, #36c5ff, #147be8);
+      color: #06142b;
+      font-weight: 800;
+      box-shadow: 0 10px 30px rgba(35, 160, 255, 0.25);
+      transition: transform 0.3s, box-shadow 0.3s;
     }
 
     .button:hover {
       transform: translateY(-4px);
-      box-shadow: 0 16px 35px #1489df55;
+      box-shadow: 0 15px 35px rgba(35, 160, 255, 0.4);
     }
 
-    .button.outline {
+    .button.secondary {
       background: transparent;
-      color: #fff;
-      border: 1px solid #4694cc;
+      color: #ffffff;
+      border: 1px solid #4386c4;
       box-shadow: none;
+      margin-left: 10px;
     }
 
-    /* Animated 3D engineering cube */
+    /* CSS 3D rotating CAD-inspired cube */
     .visual {
-      min-height: 390px;
+      min-height: 360px;
       display: flex;
       align-items: center;
       justify-content: center;
-      perspective: 1000px;
+      perspective: 900px;
     }
 
     .cube-scene {
-      width: 205px;
-      height: 205px;
-      perspective: 850px;
+      width: 210px;
+      height: 210px;
+      perspective: 800px;
     }
 
     .cube {
@@ -157,7 +158,7 @@
       height: 100%;
       position: relative;
       transform-style: preserve-3d;
-      animation: spin 15s linear infinite;
+      animation: rotateCube 14s linear infinite;
     }
 
     .face {
@@ -166,28 +167,32 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      border: 2px solid #5bdcff;
-      background: linear-gradient(135deg, #1c8ad544, #0c2b4eaa);
-      box-shadow: inset 0 0 28px #3fcfff2a, 0 0 18px #30bfff22;
-      color: #a3edff;
-      font-size: 25px;
+      border: 2px solid #50d7ff;
+      background: rgba(22, 107, 178, 0.19);
+      box-shadow: inset 0 0 35px rgba(48, 190, 255, 0.13),
+                  0 0 20px rgba(48, 190, 255, 0.12);
+      color: #8ce6ff;
+      font-size: 32px;
       font-weight: bold;
-      text-shadow: 0 0 12px #31caff;
+      letter-spacing: 3px;
+      backface-visibility: visible;
     }
 
-    .front { transform: translateZ(102px); }
-    .back { transform: rotateY(180deg) translateZ(102px); }
-    .right { transform: rotateY(90deg) translateZ(102px); }
-    .left { transform: rotateY(-90deg) translateZ(102px); }
-    .top { transform: rotateX(90deg) translateZ(102px); }
-    .bottom { transform: rotateX(-90deg) translateZ(102px); }
+    .front  { transform: translateZ(105px); }
+    .back   { transform: rotateY(180deg) translateZ(105px); }
+    .right  { transform: rotateY(90deg) translateZ(105px); }
+    .left   { transform: rotateY(-90deg) translateZ(105px); }
+    .top    { transform: rotateX(90deg) translateZ(105px); }
+    .bottom { transform: rotateX(-90deg) translateZ(105px); }
 
-    @keyframes spin {
-      from { transform: rotateX(-20deg) rotateY(0); }
-      to { transform: rotateX(340deg) rotateY(360deg); }
+    @keyframes rotateCube {
+      from { transform: rotateX(-20deg) rotateY(0deg); }
+      to   { transform: rotateX(340deg) rotateY(360deg); }
     }
 
-    .section { padding: 85px 8%; }
+    .section {
+      padding: 85px 8%;
+    }
 
     .section-title {
       text-align: center;
@@ -195,146 +200,116 @@
     }
 
     .section-title h2 {
-      font-size: clamp(29px, 4vw, 43px);
-      line-height: 1.3;
+      font-size: clamp(29px, 4vw, 42px);
       margin-bottom: 14px;
     }
 
+    .section-title h2 span {
+      color: #43c8ff;
+    }
+
     .section-title p {
-      color: #b7cce6;
-      line-height: 1.8;
+      color: #aebfda;
+      line-height: 1.7;
     }
 
     .services {
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 25px;
-      perspective: 1000px;
+      gap: 24px;
     }
 
     .service-card {
-      min-height: 255px;
       padding: 30px 25px;
-      border-radius: 18px;
-      border: 1px solid #2874a35c;
-      background: linear-gradient(145deg, #14345a, #09172f);
-      box-shadow: 10px 12px 28px #00000030,
-                  inset 1px 1px #ffffff0b;
-      transform-style: preserve-3d;
-      transition: transform .4s, border-color .4s, box-shadow .4s;
+      border-radius: 17px;
+      background: linear-gradient(145deg, #102b50, #091a35);
+      border: 1px solid rgba(80, 177, 255, 0.25);
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.18);
+      transition: transform 0.35s, border-color 0.35s;
     }
 
     .service-card:hover {
-      transform: translateY(-10px) rotateX(3deg) rotateY(-3deg);
-      border-color: #48d4ff;
-      box-shadow: 0 22px 40px #13a9ff25;
+      transform: translateY(-9px) rotateX(2deg);
+      border-color: #45c8ff;
     }
 
     .service-icon {
-      font-size: 43px;
-      margin-bottom: 19px;
-      filter: drop-shadow(0 6px 10px #00bfff35);
-      transform: translateZ(20px);
+      font-size: 37px;
+      margin-bottom: 20px;
     }
 
     .service-card h3 {
       color: #ffb653;
-      font-size: 20px;
       margin-bottom: 13px;
-      line-height: 1.4;
-      transform: translateZ(15px);
+      font-size: 20px;
     }
 
     .service-card p {
-      color: #c5d6ec;
-      font-size: 14px;
+      color: #b9cce6;
       line-height: 1.8;
-    }
-
-    .service-label {
-      display: inline-block;
-      margin-top: 18px;
-      padding: 7px 10px;
-      border: 1px solid #278bc8;
-      border-radius: 25px;
-      color: #6bdbff;
-      font-size: 11px;
+      font-size: 14px;
     }
 
     .about {
+      background: linear-gradient(135deg, #0b2040, #0c2a4e);
       text-align: center;
-      background: linear-gradient(135deg, #0c2444, #0c2c4e);
     }
 
-    .about-content {
-      max-width: 850px;
+    .about p {
+      max-width: 780px;
       margin: auto;
-      color: #c4d5ec;
+      color: #c3d5ed;
       line-height: 1.9;
-    }
-
-    .features {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
-      margin-top: 38px;
-    }
-
-    .feature {
-      padding: 22px;
-      background: #0a1c36;
-      border: 1px solid #244d75;
-      border-radius: 13px;
-    }
-
-    .feature h3 {
-      color: #4bd4ff;
-      margin-bottom: 10px;
-    }
-
-    .feature p {
-      color: #bdcde1;
-      font-size: 14px;
-      line-height: 1.7;
     }
 
     .contact {
       text-align: center;
-      background: radial-gradient(ellipse at center, #153b65, transparent 72%);
+      background:
+        radial-gradient(ellipse at center, #123966, transparent 70%);
     }
 
     .contact h2 {
-      font-size: clamp(30px, 4vw, 44px);
-      margin-bottom: 20px;
+      font-size: clamp(30px, 4vw, 43px);
+      margin-bottom: 18px;
     }
 
     .contact p {
-      color: #c4d5ec;
+      color: #c2d4ec;
+      margin-bottom: 28px;
       line-height: 1.8;
-      margin-bottom: 22px;
     }
 
     .phone {
-      display: block;
       color: #ffb653;
-      font-size: 27px;
+      font-size: 25px;
       font-weight: bold;
       margin: 25px 0;
+      display: block;
     }
 
     footer {
       text-align: center;
-      padding: 27px 15px;
-      border-top: 1px solid #1c4166;
-      color: #b2c5df;
+      padding: 25px 15px;
+      border-top: 1px solid #1d4166;
+      color: #aebfda;
       font-size: 13px;
-      line-height: 1.9;
+      line-height: 1.8;
     }
 
-    @media (max-width: 850px) {
+    @media (max-width: 800px) {
+      header {
+        flex-direction: column;
+      }
+
+      nav {
+        justify-content: center;
+        gap: 15px;
+      }
+
       .hero {
         grid-template-columns: 1fr;
         text-align: center;
+        padding-top: 65px;
       }
 
       .intro {
@@ -342,28 +317,29 @@
         margin-right: auto;
       }
 
-      .visual { min-height: 310px; }
+      .visual {
+        min-height: 300px;
+      }
 
-      .services { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .cube-scene {
+        transform: scale(0.8);
+      }
 
-      .features { grid-template-columns: 1fr; }
-    }
+      .services {
+        grid-template-columns: 1fr;
+      }
 
-    @media (max-width: 560px) {
-      header { justify-content: center; }
-      nav { justify-content: center; gap: 13px; }
-      .services { grid-template-columns: 1fr; }
-      .section { padding: 65px 6%; }
-      .hero { padding: 60px 6%; }
-      .cube-scene { transform: scale(.8); }
+      .button.secondary {
+        margin: 12px 0 0;
+      }
     }
 
     @media (prefers-reduced-motion: reduce) {
       *, *::before, *::after {
-        animation-duration: .01ms !important;
+        animation-duration: 0.01ms !important;
         animation-iteration-count: 1 !important;
         scroll-behavior: auto !important;
-        transition-duration: .01ms !important;
+        transition-duration: 0.01ms !important;
       }
     }
   </style>
@@ -374,175 +350,107 @@
     "@type": "ProfessionalService",
     "name": "United CAD Services",
     "telephone": "+91-9845825097",
-    "description": "CAD drafting, BIM, interior design, 3D modelling and Primavera project management services."
+    "description": "CAD design and drafting services."
   }
   </script>
 </head>
 
 <body>
 
-<header>
-  <a href="#home" class="logo">UNITED <span>CAD SERVICES</span></a>
-  <nav aria-label="Main navigation">
-    <a href="#home">Home</a>
-    <a href="#services">Services</a>
-    <a href="#about">About</a>
-    <a href="#contact">Contact</a>
-  </nav>
-</header>
+  <header>
+    <a class="logo" href="#home">UNITED <span>CAD</span></a>
+    <nav aria-label="Main navigation">
+      <a href="#home">Home</a>
+      <a href="#services">Services</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
 
-<main>
-  <section class="hero" id="home">
-    <div>
-      <span class="tag">CAD • BIM • DESIGN • PLANNING</span>
-      <h1>Design Your Ideas Into <span>Reality</span></h1>
-      <p class="intro">
-        Welcome to United CAD Services. Explore CAD drafting, BIM,
-        interior design, 3D modelling and Primavera project management
-        solutions for your project requirements.
-      </p>
-      <a class="button" href="tel:+919845825097">? Call Us</a>
-      <a class="button outline" href="#services">Explore Services</a>
-    </div>
+  <main>
+    <section class="hero" id="home">
+      <div>
+        <div class="tag">DESIGN · DRAFTING · DETAIL</div>
+        <h1>Ideas Into <span>Precision</span> Designs</h1>
+        <p class="intro">
+          Welcome to United CAD Services. Explore professional CAD
+          design and drafting solutions with a modern, technology-focused
+          approach.
+        </p>
+        <a class="button" href="tel:+919845825097">Call Us Now</a>
+        <a class="button secondary" href="#services">Our Services</a>
+      </div>
 
-    <div class="visual" aria-label="Animated 3D CAD cube">
-      <div class="cube-scene">
-        <div class="cube">
-          <div class="face front">CAD</div>
-          <div class="face back">BIM</div>
-          <div class="face right">3D</div>
-          <div class="face left">DESIGN</div>
-          <div class="face top">UCS</div>
-          <div class="face bottom">PLAN</div>
+      <div class="visual" aria-label="Animated 3D CAD-inspired cube">
+        <div class="cube-scene">
+          <div class="cube">
+            <div class="face front">CAD</div>
+            <div class="face back">3D</div>
+            <div class="face right">UCS</div>
+            <div class="face left">DESIGN</div>
+            <div class="face top">U</div>
+            <div class="face bottom">CAD</div>
+          </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <section class="section" id="services">
-    <div class="section-title">
-      <h2>Our <span>Professional Services</span></h2>
-      <p>Design, drafting, visualisation and project planning solutions.</p>
-    </div>
+    <section class="section" id="services">
+      <div class="section-title">
+        <h2>Our <span>CAD Services</span></h2>
+        <p>Design-focused solutions for your project requirements.</p>
+      </div>
 
-    <div class="services">
+      <div class="services">
+        <article class="service-card">
+          <div class="service-icon">??</div>
+          <h3>2D CAD Drafting</h3>
+          <p>Detailed 2D drawings and drafting support based on your project requirements.</p>
+        </article>
 
-      <article class="service-card">
-        <div class="service-icon">??</div>
-        <h3>AutoCAD Design</h3>
-        <p>2D drafting, technical drawings, plans, layouts and CAD documentation.</p>
-        <span class="service-label">2D CAD • Drafting</span>
-      </article>
+        <article class="service-card">
+          <div class="service-icon">??</div>
+          <h3>3D CAD Modelling</h3>
+          <p>Three-dimensional modelling concepts to help visualise components and designs.</p>
+        </article>
 
-      <article class="service-card">
-        <div class="service-icon">??</div>
-        <h3>BIM Services</h3>
-        <p>Building Information Modelling support for building models and design coordination.</p>
-        <span class="service-label">Building • Modelling</span>
-      </article>
+        <article class="service-card">
+          <div class="service-icon">??</div>
+          <h3>Design Support</h3>
+          <p>CAD drawing and design support tailored to the needs of your project.</p>
+        </article>
+      </div>
+    </section>
 
-      <article class="service-card">
-        <div class="service-icon">???</div>
-        <h3>Interior Design</h3>
-        <p>Interior space planning, furniture layouts, design concepts and 3D visualisation.</p>
-        <span class="service-label">Interiors • Visualisation</span>
-      </article>
-
-      <article class="service-card">
-        <div class="service-icon">??</div>
-        <h3>Primavera Project Management</h3>
-        <p>Project schedules, activity planning, progress tracking and timeline management support.</p>
-        <span class="service-label">Planning • Scheduling</span>
-      </article>
-
-      <article class="service-card">
-        <div class="service-icon">??</div>
-        <h3>3D Modelling</h3>
-        <p>Three-dimensional models and visual concepts to present design ideas clearly.</p>
-        <span class="service-label">3D Models • Design</span>
-      </article>
-
-      <article class="service-card">
-        <div class="service-icon">???</div>
-        <h3>Architectural Drafting</h3>
-        <p>Architectural drawings, floor plans and project drafting documentation.</p>
-        <span class="service-label">Plans • Drawings</span>
-      </article>
-
-      <article class="service-card">
-        <div class="service-icon">??</div>
-        <h3>Technical Drafting</h3>
-        <p>Technical drawing and drafting support according to project requirements.</p>
-        <span class="service-label">Technical • CAD</span>
-      </article>
-
-      <article class="service-card">
-        <div class="service-icon">??</div>
-        <h3>Project Planning</h3>
-        <p>Project timeline preparation, task sequencing and schedule monitoring support.</p>
-        <span class="service-label">Project • Timeline</span>
-      </article>
-
-      <article class="service-card">
-        <div class="service-icon">??</div>
-        <h3>3D Design Visualisation</h3>
-        <p>Visual presentation concepts to help clients understand design ideas and spaces.</p>
-        <span class="service-label">3D • Visual Design</span>
-      </article>
-
-    </div>
-  </section>
-
-  <section class="section about" id="about">
-    <div class="section-title">
-      <h2>About <span>United CAD Services</span></h2>
-    </div>
-
-    <div class="about-content">
+    <section class="section about" id="about">
+      <div class="section-title">
+        <h2>About <span>United CAD Services</span></h2>
+      </div>
       <p>
-        United CAD Services provides design and project support across CAD
-        drafting, BIM, interior design, 3D modelling and project planning.
-        Contact us to discuss your project needs and confirm the services
-        available for your specific requirements.
+        United CAD Services focuses on CAD design and drafting solutions.
+        Contact us to discuss your requirements, project scope and service
+        availability.
       </p>
+    </section>
 
-      <div class="features">
-        <div class="feature">
-          <h3>CAD & Drafting</h3>
-          <p>Technical drawing and design documentation.</p>
-        </div>
+    <section class="section contact" id="contact">
+      <h2>Let's Discuss Your <span style="color:#ffad42">Project</span></h2>
+      <p>Contact United CAD Services for enquiries and project discussions.</p>
 
-        <div class="feature">
-          <h3>3D Visualisation</h3>
-          <p>Modern 3D presentation and modelling concepts.</p>
-        </div>
+      <a class="phone" href="tel:+919845825097">? 9845825097</a>
 
-        <div class="feature">
-          <h3>Project Planning</h3>
-          <p>Scheduling and timeline planning support.</p>
-        </div>
-      </div>
-    </div>
-  </section>
+      <a class="button" href="tel:+919845825097">Call United CAD Services</a>
+    </section>
+  </main>
 
-  <section class="section contact" id="contact">
-    <h2>Let's Build Something <span>Great</span></h2>
-    <p>Contact United CAD Services for enquiries and project discussions.</p>
+  <footer>
+    <p>© <span id="year"></span> United CAD Services. All rights reserved.</p>
+    <p>CAD Design & Drafting Solutions</p>
+  </footer>
 
-    <a class="phone" href="tel:+919845825097">? 9845825097</a>
-
-    <a class="button" href="tel:+919845825097">Call United CAD Services</a>
-  </section>
-</main>
-
-<footer>
-  <p>© <span id="year"></span> United CAD Services. All rights reserved.</p>
-  <p>CAD Design • BIM • Interior Design • Primavera • 3D Modelling</p>
-</footer>
-
-<script>
-  document.getElementById("year").textContent = new Date().getFullYear();
-</script>
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
 
 </body>
 </html>
